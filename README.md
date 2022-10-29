@@ -1,7 +1,9 @@
 # mysql-nearest
 Finding the nearest store based on a stores dataset with longitude and latitude using MySQL Workbench CE 8.0.30
 
-## STEP 1. Use the query editor to create localStarbucks database and directory table
+## STEP 1. Create localStarbucks database and directory table
+Using the query editor in Workbench.
+
 ```SQL
 CREATE DATABASE localStarbucks;
 
