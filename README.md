@@ -46,11 +46,11 @@ SET SQL_SAFE_UPDATES = 0;
 DELETE FROM directory WHERE longitude IS NULL OR latitude IS NULL;
 ```
 
-## STEP 4. Get the nearest store to my location using a distance formula referenced on Stackoverflow
-- [find-nearest-latitude-longitude-with-an-sql-query](https://stackoverflow.com/questions/2234204/find-nearest-latitude-longitude-with-an-sql-query)
+## STEP 4. Get the nearest store to my location
+- Using a distance formula referenced on Stackoverflow [find-nearest-latitude-longitude-with-an-sql-query](https://stackoverflow.com/questions/2234204/find-nearest-latitude-longitude-with-an-sql-query)
 - Most voted answer, recommended for *short distances* as this case
 - ***WARNING***: *the distance formula would be different depending on your case/needs*
-- 
+
 ```SQL
 SELECT storeName, streetAddress, city, latitude, longitude, 
     SQRT( POW(69.1 * (latitude - 19.4891442), 2) +
@@ -62,7 +62,9 @@ NOTES:
 - To limit the results to a maximum distance in miles, use, for example: HAVING distance < 2
 - Replace 19.48 with your latitude and -99.13 with your longitude
 
-
 ## Result
 The nearest store :coffee:
-![nearest-store](https://stackoverflow.com/questions/2234204/find-nearest-latitude-longitude-with-an-sql-query)
+
+Although the store name was not correct, it was the correct location of the closest store to my location based on its coordinates. It appears that this dataset may have incorrect information.
+
+![nearest-store](https://github.com/adavals/mysql-nearest/blob/main/img/MySQL%20Workbench%20result.png)
